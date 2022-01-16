@@ -8,14 +8,17 @@ const Result = () => {
     const location=useLocation();
     const result=location.state;
 
-    const currentUrl = "https://hjtime.github.io/timeline-test";
+    const currentUrl = "https://hjtime.github.io/timeline-test-site";
 
-    // const handleshareTwitter=()=>{
-    //     const sendText = "탐캐테스트 - 탐라에서의 나는 "+result.title; // 전달할 텍스트
-    //     const sendUrl = "https://hjtime.github.io/timeline-test"; // 전달할 UR
-    //     const sendImg= 'https://hjtime.github.io/timeline-test/images/'+result.type+'.png';
-    //     window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
-    // }
+    const setMetaTags = ({ title="기본 타이틀", description="기본 설명" }) => {
+        document .querySelector('meta[property="og:title"]') .setAttribute("content", title);
+        document .querySelector('meta[property="og:description"]') .setAttribute("content", description);
+    };
+
+    setMetaTags({
+        title:"탐캐테스트 - 탐라에서의 나는"+result.title,
+        description: result.desc,
+    })
 
     return (
         <div className='result'>
@@ -33,11 +36,8 @@ const Result = () => {
                     <span className="name">{result.alike}</span>
                 </div>
 
-                {/* <button className="result-button" onClick={handleshareTwitter}>트위터</button>
-                <button className="result-button">페북</button> */}
-
                 <div className='result-share'>
-                    <TwitterShareButton url={currentUrl} title={"탐캐 테스트 - 탐라에서의 나는 '"+result.title+"'"} image={'https://hjtime.github.io/timeline-test/images/'+result.type+'.png'}>
+                    <TwitterShareButton url={currentUrl} title={"탐캐 테스트 - 탐라에서의 나는 '"+result.title+"'"}>
                         <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
                     </TwitterShareButton>
                     <FacebookShareButton url={currentUrl}>
