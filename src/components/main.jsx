@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Result from './result';
 
 const Main=()=>{
     const navigate=useNavigate();

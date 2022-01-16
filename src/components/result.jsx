@@ -10,6 +10,14 @@ const Result = () => {
 
     const currentUrl = "https://hjtime.github.io/timeline-test-site";
 
+    // const setMetaTags = ({ title="기본 타이틀"}) => {
+    //     document .querySelector('meta[property="og:title"]') .setAttribute("content", title);
+    // };
+
+    // setMetaTags({
+    //     title:"탐캐테스트 - 탐라에서의 나는 "+result.title,
+    // })
+
     const handleshareTwitter=()=>{
         var sendUrl = "https://hjtime.github.io/timeline-test-site"; // 전달할 URL
         window.open("https://twitter.com/intent/tweet?&url=" + sendUrl);
