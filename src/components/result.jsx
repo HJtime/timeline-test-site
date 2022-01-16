@@ -10,19 +10,6 @@ const Result = () => {
 
     const currentUrl = "https://hjtime.github.io/timeline-test-site";
 
-    // const setMetaTags = ({ title="기본 타이틀"}) => {
-    //     document .querySelector('meta[property="og:title"]') .setAttribute("content", title);
-    // };
-
-    // setMetaTags({
-    //     title:"탐캐테스트 - 탐라에서의 나는 "+result.title,
-    // })
-
-    const handleshareTwitter=()=>{
-        var sendUrl = "https://hjtime.github.io/timeline-test-site"; // 전달할 URL
-        window.open("https://twitter.com/intent/tweet?&url=" + sendUrl);
-    }
-
     return (
         <div className='result'>
             <h3>탐라에서의 나는?</h3>
@@ -38,8 +25,6 @@ const Result = () => {
                     <img src={'./images/'+result.alikeImg+'.png'} className='img' alt="결과 비슷한 캐릭터 이미지"/>
                     <span className="name">{result.alike}</span>
                 </div>
-
-                <button onClick={handleshareTwitter}>트위터</button>
 
                 <div className='result-share'>
                     <TwitterShareButton url={currentUrl} title={"탐캐 테스트 - 탐라에서의 나는 '"+result.title+"'"}>
